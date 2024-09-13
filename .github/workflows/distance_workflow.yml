@@ -41,4 +41,4 @@ jobs:
           git commit -m "Atualizando dados de distância"
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GMaps_Git }}  # Token para autenticação
+          GITHUB_TOKEN: ${{ secrets.GMAP_GIT }}  # Token para autenticação
