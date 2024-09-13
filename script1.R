@@ -18,7 +18,7 @@ travel_times <- data.frame(timestamp = as.POSIXct(character()),
 #num_iteracoes <- 12
 num_iteracoes <- 2
 
-for (i in 1:num_iteracoes) {
+for(i in 1:num_iteracoes){
   timestamp <- Sys.time()
   for (j in length(pares_od)) {
     travel_time <- get_travel_time(pares_od[[j]]$origem, pares_od[[j]]$destino)
@@ -30,7 +30,7 @@ for (i in 1:num_iteracoes) {
   #Sys.sleep(300)  # Esperar 5 minutos (300 segundos)
   Sys.sleep(300)  # Esperar 5 minutos (300 segundos)
 }
-}
+
  
 x = as.character(as.POSIXct(Sys.time()))    
 filename = paste(x,"_df.csv",sep="")
