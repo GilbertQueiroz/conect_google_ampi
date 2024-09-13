@@ -14,7 +14,7 @@ get_travel_time <- function(origem, destino) {
   print(df)  # Verifica a estrutura da resposta da API
   
   #if (!is.null(df) && nrow(df) > 0 && length(df$rows$elements[[1]]$duration) > 0) {
-  if(!is.null(df)) {
+  if(!is.null(df)){
     travel_time <- df$rows[[1]][[1]]$duration_in_traffic$value # tempo em segundos
   } else {
     travel_time <- NA
