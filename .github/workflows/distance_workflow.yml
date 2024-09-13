@@ -25,7 +25,6 @@ jobs:
         run: |
           install.packages(c("googleway", "git2r", "devtools"))
           install.packages("devtools")
-          devtools::install_github("SymbolixAU/googleway")
         shell: Rscript {0}
           
       # Rodar o script R
