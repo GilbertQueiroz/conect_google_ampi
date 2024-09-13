@@ -1,42 +1,44 @@
-# .github/workflows/distance_workflow.yml  
+name: Run R Script and Save Results
 
-name: Get Distance from Google Maps API  
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *' # Executa todos os dias à meia-noite (UTC)
 
-on:  
-  workflow_dispatch:  
-    inputs:  
-      origin:  
-        description: 'Coordenadas de origem (ex: "lat,lng")'  
-        required: true  
-      destination:  
-        description: 'Coordenadas de destino (ex: "lat,lng")'  
-        required: true  
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
 
-jobs:  
-  get_distance:  
-    runs-on: ubuntu-latest  
+    steps:
+      # Checkout do repositório
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    steps:  
-    - name: Checar out o código  
-      uses: actions/checkout@v2  
+      # Instalar R no ambiente
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
 
-    - name: Configurar Node.js  
-      uses: actions/setup-node@v2  
-      with:  
-        node-version: '18'  
+      # Instalar pacotes necessários
+      - name: Install R packages
+        run: |
+          Rscript -e 'install.packages(c("Googleway", "git2r"))'
 
-    - name: Instalar dependências  
-      run: npm install axios  
+      # Rodar o script R
+      - name: Run R script
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}  # Acesso seguro à chave API
+        run: |
+          Rscript script.R  # Certifique-se de que o script esteja no diretório raiz ou ajuste o caminho
 
-    - name: Obter distância  
-      run: node getDistance.js "${{ github.event.inputs.origin }}" "${{ github.event.inputs.destination }}"  
-      env:  
-        GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
-
-    - name: Fazer commit do resultado  
-      run: |  
-        git config --local user.name "github-actions"  
-        git config --local user.email "github-actions@github.com"  
-        git add distance_result.txt  
-        git commit -m "Adicionar resultado da distância entre ${{ github.event.inputs.origin }} e ${{ github.event.inputs.destination }}"  
-        git push
+      # Commit e push dos resultados
+      - name: Commit and push results
+        run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git add distance_data.csv
+          git commit -m "Atualizando dados de distância"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GMaps_Git }}  # Token para autenticação
