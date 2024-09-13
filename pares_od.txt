@@ -1,0 +1,13 @@
+pares_od <- list(
+  list(origem = c(-3.71120, -38.55895), 
+       destino = c(-3.71926, -38.53230), 
+       idRota = "R01-2-Av. Pres. Castelo Branco-OL"),
+  list(origem = c(-3.75310, -38.51703), 
+       destino = c(-3.74451, -38.53487), 
+       idRota = "R07-1-Av. 13 de Maio-LO"),
+  list(origem = c(-3.79315, -38.51781), 
+       destino = c(-3.81764, -38.53272), 
+       idRota = "R16-2-Av. Alberto Craveiro-NS"),
+  list(origem = c(-3.79357, -38.5177), 
+       destino = c(-3.76981, -38.5104), 
+       idRota = "R17-2-Av. Raul Barbosa-SN"))
