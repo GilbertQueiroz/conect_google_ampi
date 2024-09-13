@@ -32,3 +32,11 @@ jobs:
       run: node getDistance.js "${{ github.event.inputs.origin }}" "${{ github.event.inputs.destination }}"  
       env:  
         GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
+
+    - name: Fazer commit do resultado  
+      run: |  
+        git config --local user.name "github-actions"  
+        git config --local user.email "github-actions@github.com"  
+        git add distance_result.txt  
+        git commit -m "Adicionar resultado da distância entre ${{ github.event.inputs.origin }} e ${{ github.event.inputs.destination }}"  
+        git push
