@@ -16,7 +16,7 @@ travel_times <- data.frame(timestamp = as.POSIXct(character()),
 
 # Número de iterações (12 * 5 minutos = 60 min)
 #num_iteracoes <- 12
-num_iteracoes <- 2
+num_iteracoes <- 4
 
 for(i in 1:num_iteracoes){
   timestamp <- Sys.time()
@@ -28,7 +28,7 @@ for(i in 1:num_iteracoes){
                                      travel_time = travel_time))
   }
   #Sys.sleep(300)  # Esperar 5 minutos (300 segundos)
-  Sys.sleep(300)  # Esperar 5 minutos (300 segundos)
+  Sys.sleep(120)  # Esperar 5 minutos (300 segundos)
 }
 
  
