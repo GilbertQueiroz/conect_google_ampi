@@ -26,6 +26,7 @@ jobs:
           install.packages(c("googleway", "git2r", "devtools"))
           install.packages("devtools")
         shell: Rscript {0}
+        
           
       # Rodar o script R
       - name: Run R script
