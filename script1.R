@@ -5,6 +5,7 @@ library(git2r)
 source("pares_od.txt")
 source("get_travel_time.R")
 
+set_key(key = "AIzaSyA6NSHW6qdueChY4UY0wMOB6xPI9wnr6Sc")
 
 # Banco de dados vazio
 
