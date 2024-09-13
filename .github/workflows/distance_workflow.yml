@@ -28,7 +28,7 @@ jobs:
       # Rodar o script R
       - name: Run R script
         env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}  # Acesso seguro à chave API
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}  # Acesso seguro à chave API
         run: |
           Rscript script.R  # Certifique-se de que o script esteja no diretório raiz ou ajuste o caminho
 
