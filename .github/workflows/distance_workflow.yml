@@ -1,4 +1,4 @@
-name: Run R Script and Save Results
+#name: Run R Script and Save Results
 
 on:
   push:
@@ -32,7 +32,7 @@ jobs:
       # Rodar o script R
       - name: Run R script
         env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}  # Acesso seguro à chave API
+          # GOOGLE_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}  # Acesso seguro à chave API
           GITHUB_TOKEN: ${{ secrets.GMAP_GIT }} #  Acesso seguro ao Git
         run: |
           Rscript script1.R  # Certifique-se de que o script esteja no diretório raiz ou ajuste o caminho
