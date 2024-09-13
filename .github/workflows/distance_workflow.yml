@@ -23,8 +23,9 @@ jobs:
       # Instalar pacotes necessários
       - name: Install R packages
         run: |
-          Rscript -e 'install.packages(c("googleway", "git2r"))'
-
+          Rscript -e 'install.packages(c("googleway", "git2r", "devtools"))'
+          Rscript -e 'devtools::install_github("SymbolixAU/googleway")'
+          
       # Rodar o script R
       - name: Run R script
         env:
