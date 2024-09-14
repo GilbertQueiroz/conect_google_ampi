@@ -15,8 +15,8 @@ travel_times <- data.frame(timestamp = as.POSIXct(character()),
                            stringsAsFactors = FALSE)
 
 # Número de iterações (12 * 5 minutos = 60 min)
-#num_iteracoes <- 12
-num_iteracoes <- 4
+num_iteracoes <- 12
+#num_iteracoes <- 4
 
 for(i in 1:num_iteracoes){
   timestamp <- Sys.time()
