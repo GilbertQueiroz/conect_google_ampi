@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 0 * * *' # Executa todos os dias à meia-noite (UTC)
+    - cron: '15  * * *' # Executa todos os dias à meia-noite (UTC)
 
 jobs:
   run-script:
