@@ -1,4 +1,4 @@
-#name: Run R Script and Save Results
+name: Run R Script and Save Results
 
 on:
   push:
