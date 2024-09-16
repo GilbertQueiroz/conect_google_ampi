@@ -1,11 +1,12 @@
-name: Run R Script and Save Results
-
 on:
   push:
     branches:
       - main
   schedule:
-    - cron: '0/15 * * *' # Executa todos os dias à meia-noite (UTC)
+    - cron: '0/15 * * * *' 
+  # Executa todos os dias à meia-noite (UTC)
+
+name: Run R Script and Save Results
 
 jobs:
   run-script:
