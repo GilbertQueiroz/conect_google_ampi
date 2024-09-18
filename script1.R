@@ -20,7 +20,7 @@ num_iteracoes <- 12
 
 for(i in 1:num_iteracoes){
   timestamp <- Sys.time()
-  for (j in length(pares_od)) {
+  for (j in 1:length(pares_od)) {
     travel_time <- get_travel_time(pares_od[[j]]$origem, pares_od[[j]]$destino)
     travel_times <- rbind(travel_times, 
                           data.frame(timestamp = timestamp,
