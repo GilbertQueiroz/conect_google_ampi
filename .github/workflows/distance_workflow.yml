@@ -3,7 +3,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0/15 * * * *' 
+    - cron: '0/30 * * * *' 
   # Executa todos os dias à meia-noite (UTC)
 
 name: Run R Script and Save Results
