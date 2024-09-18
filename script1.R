@@ -32,10 +32,10 @@ for(i in 1:num_iteracoes){
 }
 
  
-x = as.character(as.POSIXct(Sys.time()))    
+x = as.character(Sys.time())
 filename = paste(x,"_df.csv",sep="")
 filename = gsub(":","-",filename)
-filename = gsub(" ","_",filename)
+filename = gsub(" ",".",filename)
 
 # Gerar o banco de dados
 write.csv(travel_times, filename)
