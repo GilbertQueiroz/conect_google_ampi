@@ -3,7 +3,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '30/30 4-7 19 9 *' 
+    - cron: '30/30 4-7 23-27 9 *' 
   
 
 name: Run R Script and Save Results
